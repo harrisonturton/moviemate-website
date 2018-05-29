@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+
+html, * {
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+	font-family: "Gravity", "Roboto", sans-serif;
+}
+
+h1 {
+	color: white;
+	font-size: 3rem;
+	margin-bottom: 10px;
+	font-weight: 800;
+	letter-spacing: 0.025em;
+}
+
+h2 {
+	color: white;
+	font-weight: 300;
+	font-size: 1.6rem;
+	opacity: 0.8;
+	margin-bottom: 15px;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+.content-container {
+	position: relative;
+	top: 45vh;
+	z-index: 1;
+}
+
+header {
+	display: flex;
+	margin-left: 10px;
+	margin-right: 10px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	animation: slideIn 0.5s ease-out;
+}
+
+.panel {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 50vh;
+
+	margin-left: 30px;
+	margin-right: 30px;
+	padding: 30px;
+	height: 300px;
+
+	background: white;
+	border-radius: 20px 20px 0px 0px;
+}
+
+.tile-container {
+	position: absolute;
+	top: -12.5vh;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: space-evenly;
+	animation: fadein 0.8s;
+	animation-fill-mode: forwards;
+}
+
+.fadein {
+	opacity: 0;
+	animation: fadein 0.8s;
+	animation-fill-mode: forwards;
+}
+
+.fadein:nth-child(2) {
+	animation-delay: 0.2s;
+}
+
+.fadein:nth-child(3) {
+	animation-delay: 0.4s;
+}
+
+.fadein:nth-child(4) {
+	animation-delay: 0.8s;
+}
+
+.numbered-tile {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	text-align: center;
+	background: white;
+	width: 100px;
+	padding: 30px;
+	padding-top: 20px;
+	border-radius: 5px;
+	filter: drop-shadow(0 5px 5px rgba(0,0,0,0.15));
+}
+
+.numbered-tile-number {
+	font-size: 2.5em;
+	font-weight: 800;
+	color: #9D2FC7;
+	margin-bottom: 15px;
+}
+
+.numbered-tile-text {
+	margin: 0 auto;
+	font-size: 1.4em;
+	top: 25%;
+}
+
+.background-container {
+	position: fixed;
+	z-index: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	height: 100vh;
+	background: black;
+}
+
+.background-container:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: linear-gradient(
+		to bottom right,
+		#FF0084,
+		#00CDFF
+	);
+	opacity: 0.6;
+}
+
+.header-content {
+	position: absolute;
+	text-align: center;
+	margin-bottom: 50px;
+	z-index: 1;
+}
+
+.button {
+	display: inline-block;
+	margin-top: 15px;
+
+	padding: 10px;
+	padding-left: 35px;
+	padding-right: 35px;
+	background: #FF8F00;
+	border-radius: 5px;
+
+	color: white;
+	font-weight: 300;
+	font-size: 1rem;
+	text-decoration: none;
+}
+
+
+.background {
+	position: relative;
+	z-index: 0;
+	transform: rotate(-25deg) translate3d(0,0,0);
+	 /*transform: perspective(400px) rotateY(-10deg) rotateX(10deg) rotateZ(10deg);*/
+}
+
+.slide-row {
+	display: flex;
+	flex-wrap: nowrap;
+	width: 120vw;
+	min-width: 750px;
+	transform: translate3d(0,0,0);
+	will-change: transform;
+}
+
+@keyframes moveSlides {
+	100% {
+		transform: translateX(-55.5%);
+	}
+}
+
+@keyframes fadeInOut {
+	0% {
+		opacity: 0;
+	}
+	10% {
+		opacity: 0.9;
+	}
+	90% {
+		opacity: 0.9;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.movie-slide {
+	min-width: 200px;
+	filter: blur(2px);
+	width: 200px;
+	height: auto;
+	margin: 7px;
+	opacity: 0.4;
+}
+
+.changing-title {
+	opacity: 0;
+	animation: fadeInOut 4s linear infinite;
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+		transform: translate3d(0, 10%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}

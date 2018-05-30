@@ -293,6 +293,16 @@ li {
 	flex-wrap: nowrap;
 	width: 120vw;
 	min-width: 750px;
+	transform: translate3d(0,0,0);
+	will-change: transform;
+}
+
+.slide-row.reversed {
+	animation: moveSlides 60s reverse linear infinite;
+}
+
+.slide-row.forward {
+	animation: moveSlides 60s linear infinite;
 }
 
 .movie-slide {
@@ -302,11 +312,6 @@ li {
 	height: auto;
 	margin: 7px;
 	opacity: 0.4;
-}
-
-.changing-title {
-	opacity: 0;
-	animation: fadeInOut 4s linear infinite;
 }
 
 .subheader-container {
@@ -330,6 +335,54 @@ li {
 @keyframes moveSlides {
 	100% {
 		transform: translateX(-55.5%);
+	}
+}
+
+.changing-title {
+	opacity: 0;
+	animation: fadeIn 0.8s;
+	animation-fill-mode: forwards;
+}
+
+.fadeIn {
+	animation: fadeIn 2s ease-out;
+}
+
+.fadeIn.visible {
+	background: green;
+}
+
+.fadeOut {
+	animation: fadeOut 2s ease-in;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(-10%);
+	}
+	15% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+	85% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(10%);
 	}
 }
 
@@ -377,18 +430,7 @@ li {
 	.button {
 		font-size: 1.1rem;
 	}
-	.slide-row {
-		transform: translate3d(0,0,0);
-		will-change: transform;
-	}
-	.slide-row.reversed {
-		animation: moveSlides 60s reverse linear infinite;
-	}
-	.slide-row.forward {
-		animation: moveSlides 60s linear infinite;
-	}
 	.background {
 		 transform: perspective(400px) rotateY(-10deg) rotateX(10deg) rotateZ(10deg);
 	}
 }
-

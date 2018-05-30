@@ -48,7 +48,7 @@ export default class App extends Component {
 						<Button text="GET MOVIEMATE"/>
 					</header>
 					<div className="panel">
-						<div className="tile-container fadein">
+						<div className="tile-container">
 							<NumberedTile
 								number="1"
 								text="Get the App"

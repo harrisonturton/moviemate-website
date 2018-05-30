@@ -219,7 +219,7 @@ class SlideRow extends Component {
 		}
 
 		return (
-			<div className="slide-row" style={style}>
+			<div className={"slide-row " + (reversed ? "reversed" : "forward")}>
 				{slides}
 			</div>
 		)

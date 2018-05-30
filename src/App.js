@@ -21,6 +21,13 @@ export default class App extends Component {
 						<SlideRow reversed={false}/>
 					</div>
 				</div>
+				<nav>
+					<a href="" class="logo">moviemate</a>
+					<div class="nav-account-buttons">
+						<a href="" class="nav-elem">LOGIN</a>
+						<a href="" class="nav-register">SIGN UP</a>
+					</div>
+				</nav>
 				<div className="content-container">
 					<header>
 						<h1>Infinite Cinema Visits</h1>
@@ -30,15 +37,15 @@ export default class App extends Component {
 								"Gluten Free Movies",
 								"\"A great idea\" - Mum",
 								"Loved by dozens of people",
+								"Bougie Netflix",
 								"Please sign up",
 								"Date-night every night",
-								"Used by over 8 people",
 								"In the Seats & Off the Streets",
 								"Ryan Reynolds 3 times a week",
 								"Suggest a tagline to contact@moviemate.com",
 							]}
 						/>
-						<Button text="GET STARTED"/>
+						<Button text="GET MOVIEMATE"/>
 					</header>
 					<div className="panel">
 						<div className="tile-container fadein">
@@ -55,9 +62,64 @@ export default class App extends Component {
 								text="Go to the Cinema"
 							/>
 						</div>
-						<h3>Hello</h3>
+						<div className="subheader-container">
+							<h3>Go to the Movies whenever you want, for no extra cost.</h3>
+							<h3>Only in Canberra.</h3>
+							<span class="small-text">Only at Dendy Cinemas, Canberra Center. More locations coming soon!</span>
+							<div className="sale-tile-container">
+								<SaleTile
+									name="MovieMate Unlimited"
+									focused={true}
+									price="12.99"
+									items={[
+										"20% off first month!",
+										"For one person",
+										"Unlimited Cinema Visits",
+										"Cancel at any time",
+									]}
+								/>
+								<SaleTile
+									name="MovieMate Family"
+									price="42.99"
+									items={[
+										"2 adults & 2 children",
+										"Unlimited Cinema Visits",
+										"Cancel at any time",
+									]}
+								/>
+							</div>
+						</div>
 					</div>
 				</div>
+			</div>
+		);
+	}
+}
+
+class SaleTile extends Component {
+	render () {
+		let { price, items, focused, name } = this.props;
+		if (price == undefined) price = "12.99";
+		if (items == undefined) items = [];
+		if (name == undefined) name = "Default";
+		if (focused == undefined) focused = false;
+		return (
+			<div className={"sale-tile " + (focused ? "focused" : "")}>
+				<div className="sale-tile-info">
+					<h4>{name}</h4>
+					<span class={"sale-number " + (focused ? "focused" : "")}>
+						{price}
+						<span class="sale-month">/mo</span>
+					</span>
+					<ul>
+						{items.map(item => (
+							<li>- {item}</li>
+						))}
+					</ul>
+				</div>
+				<Button
+					text="GET STARTED"
+				/>
 			</div>
 		);
 	}
@@ -113,11 +175,12 @@ class ChangingTitle extends Component {
 
 class Button extends Component {
 	render() {
-		let { text, link } = this.props;
+		let { className, text, link } = this.props;
 		if (text == undefined) text = "Click Me!";
 		if (link == undefined) link = "";
+		if (className == undefined) className = "";
 		return (
-			<a href="http://google.com" class="button">{text}</a>
+			<a href="http://google.com" className={("button " + className)}>{text}</a>
 		);
 	}
 }

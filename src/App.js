@@ -20,7 +20,7 @@ export default class App extends Component {
 				</nav>
 				<div className="content-container">
 					<header>
-						<h1>Infinite Cinema Visits</h1>
+						<h1>Unlimited Cinema Visits</h1>
 						<TextLoop
 							labels={[
 								"Blockbusters-on-Demand",
@@ -78,6 +78,22 @@ export default class App extends Component {
 									]}
 								/>
 							</div>
+							<section className="faq-container">
+								<h3 className="faq-title">Frequently Asked Questions</h3>
+								<h4 className="faq-question">What is MovieMate?</h4>
+								<p>MovieMate is a Cinema-on-Demand service.</p>
+								<p>What does that mean?</p>
+								<p>It means you can watch as many movies as you like! For a small subscription, our users can visit the cinema whenever they want.</p>
+								<h4 className="faq-question">I'm at the cinema. What now?</h4>
+								<p>Reach for the MovieMate app, not your wallet, when buying a ticket!</p>
+								<p>Make sure you're logged into the app. The cinema attendant will verify your account, and then give you a ticket.</p>
+								<h4 className="faq-question">Membership</h4>
+								<p>Pick your price & pick your plan! We offer two options: an individual plan, and a family plan. Both give you access to unlimited cinema viewings.</p>
+								<p>The family plan is 30% cheaper than multiple memberships.</p>
+								<h4 className="faq-question">How can I cancel?</h4>
+								<p>Cancel at any time! Go to the app menu, and tap "Cancel". Alternatively, log into our website, and cancel from there.</p>
+								<p>You can do this at any time.</p>
+							</section>
 						</div>
 					</div>
 				</div>

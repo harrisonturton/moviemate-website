@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import "./pre-prefix-App.css";
 import BackgroundGrid from "./components/background-grid";
 import Button from "./components/button";
 import PricingTile from "./components/pricing-tile";
@@ -58,7 +58,8 @@ export default class App extends Component {
 							<span class="small-text">Only at Dendy Cinemas, Canberra Center. More locations coming soon!</span>
 							<div className="sale-tile-container">
 								<PricingTile
-									name="MovieMate Unlimited"
+									title="Monthly"
+									subtitle="FIRST MONTH $10!"
 									focused={true}
 									price="12.99"
 									items={[
@@ -69,10 +70,12 @@ export default class App extends Component {
 									]}
 								/>
 								<PricingTile
-									name="MovieMate Family"
+									title="3 Months"
+									subtitle="BEST VALUE DEAL!"
 									price="42.99"
 									items={[
-										"2 adults & 2 children",
+										"Better value!",
+										"For one person",
 										"Unlimited Cinema Visits",
 										"Cancel at any time",
 									]}

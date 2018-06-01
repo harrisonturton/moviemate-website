@@ -30,9 +30,13 @@ html, * {
 }
 
 p {
-	line-height: 1.65;
-	font-size: 1.3em;
+	font-family: "Gravity", "Roboto", sans-serif;
+	font-weight: 400;
+	font-size: 1.1em;
+	line-height: 1.5;
 	opacity: 0.9;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
 }
 
 h1 {
@@ -211,16 +215,8 @@ header {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
-	-webkit-box-pack: justify;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between;
-	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	flex-direction: column;
+	align-items: center;
 	text-align: center;
 	background: white;
 
@@ -267,6 +263,10 @@ header {
 
 .sale-tile-info {
 	margin-bottom: 25px;
+}
+
+.sale-deal {
+	font-weight: 600;
 }
 
 ul {
@@ -527,8 +527,8 @@ li {
 }
 
 .fadeIn {
-	-webkit-animation: fadeIn 2s ease-out;
-	        animation: fadeIn 2s ease-out;
+	-webkit-animation: fadeIn 2.5s ease-out;
+	        animation: fadeIn 2.5s ease-out;
 }
 
 .fadeIn.visible {
@@ -536,8 +536,8 @@ li {
 }
 
 .fadeOut {
-	-webkit-animation: fadeOut 2s ease-in;
-	        animation: fadeOut 2s ease-in;
+	-webkit-animation: fadeOut 2.5s ease-in;
+	        animation: fadeOut 2.5s ease-in;
 }
 
 @-webkit-keyframes fadeIn {
@@ -672,7 +672,7 @@ li {
 		font-size: 1.2em;
 	}
 	p {
-		font-size: 1.2em;
+
 	}
 	.tile-container {
 		visibility: visible;
